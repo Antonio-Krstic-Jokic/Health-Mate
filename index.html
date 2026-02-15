@@ -1,1 +1,237 @@
-<!DOCTYPE html> <html lang="hr"> <head> <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <title>HealthMate – Exercise and Diet Tracker</title> <style> body { margin: 0; font-family: Arial, Helvetica, sans-serif; background: #f4f7f6; color: #333; } header { background: #2ecc71; color: white; padding: 20px; text-align: center; } nav { display: flex; justify-content: center; background: #27ae60; } nav button { background: none; border: none; color: white; padding: 15px 20px; cursor: pointer; font-size: 16px; } nav button:hover { background: #1e8449; } .container { padding: 20px; max-width: 900px; margin: auto; } section { display: none; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); } section.active { display: block; } h2 { color: #27ae60; } label { display: block; margin-top: 10px; } input, select, button { width: 100%; padding: 8px; margin-top: 5px; } .summary { display: flex; justify-content: space-between; margin-top: 20px; } .card { flex: 1; margin: 10px; padding: 15px; background: #ecf0f1; border-radius: 6px; text-align: center; } footer { text-align: center; padding: 15px; background: #ddd; margin-top: 30px; } </style> </head> <body> <header> <h1>HealthMate</h1> <p>Vaš svakodnevni partner za zdrav život</p> </header> <nav> <button onclick="showSection('home')">Početna</button> <button onclick="showSection('profile')">Profil</button> <button onclick="showSection('exercise')">Tjelovježba</button> <button onclick="showSection('diet')">Prehrana</button> <button onclick="showSection('results')">Rezultati</button> </nav> <div class="container"> <section id="home" class="active"> <h2>Dnevni sažetak</h2> <div class="summary"> <div class="card"> <h3>Unesene kalorije</h3> <p id="calIn">0 kcal</p> </div> <div class="card"> <h3>Potrošene kalorije</h3> <p id="calOut">0 kcal</p> </div> </div> </section> <section id="profile"> <h2>Korisnički profil</h2> <label>Dob</label> <input type="number" id="age" /> <label>Spol</label> <select id="gender"> <option>Muško</option> <option>Žensko</option> </select> <label>Visina (cm)</label> <input type="number" id="height" /> <label>Težina (kg)</label> <input type="number" id="weight" /> <button onclick="saveProfile()">Spremi profil</button> </section> <section id="exercise"> <h2>Unos tjelovježbe</h2> <label>Vrsta aktivnosti</label> <input type="text" id="activity" /> <label>Trajanje (minute)</label> <input type="number" id="duration" /> <label>Potrošene kalorije</label> <input type="number" id="burned" /> <button onclick="addExercise()">Dodaj vježbu</button> </section> <section id="diet"> <h2>Unos prehrane</h2> <label>Naziv obroka</label> <input type="text" id="meal" /> <label>Kalorije</label> <input type="number" id="mealCalories" /> <button onclick="addMeal()">Dodaj obrok</button> </section> <section id="results"> <h2>Rezultati</h2> <p id="resultText">Unesite podatke kako biste vidjeli rezultate.</p> </section> </div> <footer> <p>HealthMate © 2026</p> </footer> <script> let caloriesIn = 0; let caloriesOut = 0; function showSection(id) { document.querySelectorAll('section').forEach(sec => sec.classList.remove('active')); document.getElementById(id).classList.add('active'); } function addMeal() { const cal = Number(document.getElementById('mealCalories').value); if (cal > 0) { caloriesIn += cal; document.getElementById('calIn').innerText = caloriesIn + ' kcal'; updateResults(); } } function addExercise() { const cal = Number(document.getElementById('burned').value); if (cal > 0) { caloriesOut += cal; document.getElementById('calOut').innerText = caloriesOut + ' kcal'; updateResults(); } } function updateResults() { const diff = caloriesIn - caloriesOut; let text = 'Ukupno stanje kalorija: ' + diff + ' kcal.'; if (diff > 0) text += ' Unos je veći od potrošnje.'; else if (diff < 0) text += ' Potrošnja je veća od unosa.'; else text += ' Savršena ravnoteža!'; document.getElementById('resultText').innerText = text; } function saveProfile() { alert('Profil spremljen!'); } </script> </body> </html>
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HealthMate – Exercise and Diet Tracker</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f7f6;
+      color: #333;
+    }
+    header {
+      background: #2ecc71;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background: #27ae60;
+    }
+    nav button {
+      background: none;
+      border: none;
+      color: white;
+      padding: 15px 20px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    nav button:hover {
+      background: #1e8449;
+    }
+    .container {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    section {
+      display: none;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    section.active {
+      display: block;
+    }
+    h2 {
+      color: #27ae60;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+    input, select, button {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+    }
+    .summary {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+    .card {
+      flex: 1;
+      margin: 10px;
+      padding: 15px;
+      background: #ecf0f1;
+      border-radius: 6px;
+      text-align: center;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #ddd;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>HealthMate</h1>
+  <p>Vaš svakodnevni partner za zdrav život</p>
+</header>
+
+<nav>
+  <button onclick="showSection('home')">Početna</button>
+  <button onclick="showSection('profile')">Profil</button>
+  <button onclick="showSection('exercise')">Tjelovježba</button>
+  <button onclick="showSection('diet')">Prehrana</button>
+  <button onclick="showSection('results')">Rezultati</button>
+</nav>
+
+<div class="container">
+
+  <section id="home" class="active">
+    <h2>Opis aplikacije</h2>
+
+    <p>
+      U suvremenom načinu života sve je teže održavati ravnotežu između obaveza,
+      pravilne prehrane i redovite tjelesne aktivnosti. Ubrzan tempo života,
+      nedostatak vremena i motivacije često dovode do nezdravih navika koje
+      dugoročno mogu negativno utjecati na zdravlje.
+    </p>
+
+    <p>
+      HealthMate je aplikacija osmišljena kako bi korisnicima omogućila
+      jednostavno praćenje prehrane i tjelovježbe na jednom mjestu.
+      Cilj aplikacije je pružiti jasan i razumljiv uvid u dnevni unos
+      i potrošnju kalorija te motivirati korisnike na razvoj zdravijih
+      životnih navika.
+    </p>
+
+    <p>
+      Aplikacija omogućuje unos osobnih podataka, evidentiranje obroka
+      i fizičkih aktivnosti te automatski izračun kalorijskog balansa.
+      Rezultati se prikazuju u stvarnom vremenu, što korisniku omogućuje
+      praćenje napretka i donošenje boljih odluka vezanih uz zdravlje.
+    </p>
+
+    <h2>Dnevni sažetak</h2>
+    <div class="summary">
+      <div class="card">
+        <h3>Unesene kalorije</h3>
+        <p id="calIn">0 kcal</p>
+      </div>
+      <div class="card">
+        <h3>Potrošene kalorije</h3>
+        <p id="calOut">0 kcal</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="profile">
+    <h2>Korisnički profil</h2>
+    <label>Dob</label>
+    <input type="number" id="age" />
+
+    <label>Spol</label>
+    <select id="gender">
+      <option>Muško</option>
+      <option>Žensko</option>
+    </select>
+
+    <label>Visina (cm)</label>
+    <input type="number" id="height" />
+
+    <label>Težina (kg)</label>
+    <input type="number" id="weight" />
+
+    <button onclick="saveProfile()">Spremi profil</button>
+  </section>
+
+  <section id="exercise">
+    <h2>Unos tjelovježbe</h2>
+    <label>Vrsta aktivnosti</label>
+    <input type="text" id="activity" />
+
+    <label>Trajanje (minute)</label>
+    <input type="number" id="duration" />
+
+    <label>Potrošene kalorije</label>
+    <input type="number" id="burned" />
+
+    <button onclick="addExercise()">Dodaj vježbu</button>
+  </section>
+
+  <section id="diet">
+    <h2>Unos prehrane</h2>
+    <label>Naziv obroka</label>
+    <input type="text" id="meal" />
+
+    <label>Kalorije</label>
+    <input type="number" id="mealCalories" />
+
+    <button onclick="addMeal()">Dodaj obrok</button>
+  </section>
+
+  <section id="results">
+    <h2>Rezultati</h2>
+    <p id="resultText">Unesite podatke kako biste vidjeli rezultate.</p>
+  </section>
+
+</div>
+
+<footer>
+  <p>HealthMate © 2026</p>
+</footer>
+
+<script>
+  let caloriesIn = 0;
+  let caloriesOut = 0;
+
+  function showSection(id) {
+    document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+  }
+
+  function addMeal() {
+    const cal = Number(document.getElementById('mealCalories').value);
+    if (cal > 0) {
+      caloriesIn += cal;
+      document.getElementById('calIn').innerText = caloriesIn + ' kcal';
+      updateResults();
+    }
+  }
+
+  function addExercise() {
+    const cal = Number(document.getElementById('burned').value);
+    if (cal > 0) {
+      caloriesOut += cal;
+      document.getElementById('calOut').innerText = caloriesOut + ' kcal';
+      updateResults();
+    }
+  }
+
+  function updateResults() {
+    const diff = caloriesIn - caloriesOut;
+    let text = 'Ukupno stanje kalorija: ' + diff + ' kcal.';
+    if (diff > 0) text += ' Unos je veći od potrošnje.';
+    else if (diff < 0) text += ' Potrošnja je veća od unosa.';
+    else text += ' Savršena ravnoteža!';
+    document.getElementById('resultText').innerText = text;
+  }
+
+  function saveProfile() {
+    alert('Profil spremljen!');
+  }
+</script>
+
+</body>
+</html>
