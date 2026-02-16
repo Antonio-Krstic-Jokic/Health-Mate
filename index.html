@@ -73,6 +73,13 @@
       border-radius: 6px;
       text-align: center;
     }
+    ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+    ul li {
+      margin-bottom: 8px;
+    }
     footer {
       text-align: center;
       padding: 15px;
@@ -98,70 +105,75 @@
 
 <div class="container">
 
-  <section id="home" class="active">
+<section id="home" class="active">
   <h2>Opis aplikacije</h2>
 
   <p>
     U suvremenom načinu života sve je teže održavati ravnotežu između
-    poslovnih i školskih obaveza, pravilne prehrane i redovite tjelesne
-    aktivnosti. Ubrzan tempo života, stres, manjak vremena i nedostatak
-    jasnog uvida u vlastite navike često dovode do nezdravih odluka koje
-    dugoročno mogu negativno utjecati na fizičko i mentalno zdravlje.
-    Mnogi ljudi nisu svjesni koliko su kalorija unijeli tijekom dana,
-    koliko su energije potrošili te napreduju li prema svojim osobnim
-    zdravstvenim ciljevima.
-  </p>
-  
-  <p>
-    HealthMate je web aplikacija osmišljena kako bi korisnicima omogućila
-    jednostavno, pregledno i učinkovito praćenje prehrane i tjelesne
-    aktivnosti na jednom mjestu. Aplikacija predstavlja virtualnog
-    asistenta koji korisniku pomaže u donošenju zdravijih odluka kroz
-    kontinuirano praćenje podataka i prikaz rezultata u stvarnom vremenu.
+    obaveza, pravilne prehrane i redovite tjelesne aktivnosti.
+    HealthMate omogućuje jednostavno i učinkovito praćenje prehrane
+    i tjelesne aktivnosti na jednom mjestu.
   </p>
 
+  <!-- PRVA SLIKA -->
   <div style="text-align:center; margin:25px 0;">
-  <img src="AtHomeExercise_OpenGraph.png" 
-       alt="Vježbanje kod kuće"
-       style="max-width:100%; height:auto; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+    <img src="AtHomeExercise_OpenGraph.png" 
+         alt="Vježbanje kod kuće"
+         style="max-width:100%; height:auto; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
   </div>
 
+  <h2>Što HealthMate nudi korisnicima</h2>
+  <ul>
+    <li>Jednostavno praćenje unosa kalorija i potrošnje energije.</li>
+    <li>Pregled dnevnog kalorijskog balansa u stvarnom vremenu.</li>
+    <li>Unos tjelesnih aktivnosti i praćenje napretka.</li>
+    <li>Analizu rezultata i razvoj zdravih navika.</li>
+  </ul>
+
+  <h2>Zašto HealthMate?</h2>
   <p>
-    Glavna svrha aplikacije je potaknuti razvoj zdravih životnih navika
-    kroz redovito praćenje unosa kalorija i potrošnje energije.
-    Korisnik unosi osobne podatke poput dobi, spola, visine i težine,
-    nakon čega može evidentirati dnevne obroke i tjelesne aktivnosti.
-    Sustav automatski izračunava kalorijski balans te prikazuje
-    odnos između unesenih i potrošenih kalorija.
+    HealthMate pomaže korisnicima razviti zdrave životne navike kroz
+    kontinuirano praćenje prehrane i aktivnosti. Aplikacija štedi vrijeme,
+    pojednostavljuje planiranje i omogućuje donošenje informiranih odluka
+    vezanih uz zdravlje i kondiciju.
   </p>
 
-  <p>
-    Aplikacija je osmišljena s naglaskom na jednostavno korisničko sučelje,
-    jasnoću informacija i pristupačnost svim dobnim skupinama. Pregledan
-    dizajn omogućuje brzo snalaženje unutar sustava, dok modularna
-    organizacija (Profil, Tjelovježba, Prehrana, Rezultati) osigurava
-    logičan i intuitivan tijek korištenja.
-  </p>
-
+  <!-- DRUGA SLIKA -->
   <div style="text-align:center; margin:25px 0;">
-  <img src="man_exercising1.jpg" 
-       alt="Vježbanje kod kuće"
-       style="max-width:100%; height:auto; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
+    <img src="man_exercising1.jpg" 
+         alt="Vježbanje kod kuće"
+         style="max-width:100%; height:auto; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.2);">
   </div>
 
+  <h2>Donacije i podrška razvoju</h2>
   <p>
-    Rezultati se prikazuju u stvarnom vremenu, što korisniku omogućuje
-    praćenje napretka i donošenje informiranih odluka vezanih uz prehranu
-    i tjelesnu aktivnost. Na temelju prikazanih podataka korisnik može
-    procijeniti treba li povećati razinu aktivnosti, smanjiti unos kalorija
-    ili održavati trenutnu ravnotežu.
+    Razvoj i održavanje aplikacije HealthMate zahtijeva kontinuirana
+    financijska sredstva. Donacije pomažu u pokrivanju troškova
+    održavanja sustava i razvoja novih funkcionalnosti.
   </p>
 
-  <p>
-    HealthMate tako predstavlja digitalni alat koji kombinira tehnologiju
-    i brigu o zdravlju, s ciljem poticanja aktivnijeg i kvalitetnijeg
-    načina života.
-  </p>
+  <h3>Nagrade za donatore</h3>
+  <ul>
+    <li>5 € – Zahvala unutar aplikacije</li>
+    <li>10 € – Mjesečna premium verzija</li>
+    <li>50 € – Godišnja premium verzija</li>
+    <li>100 € – VIP status</li>
+  </ul>
+
+  <div style="text-align:center; margin:30px 0;">
+    <button style="
+      background:#e74c3c;
+      color:white;
+      padding:15px 30px;
+      font-size:18px;
+      border:none;
+      border-radius:8px;
+      cursor:pointer;
+      box-shadow:0 4px 10px rgba(0,0,0,0.2);
+    ">
+      Doniraj
+    </button>
+  </div>
 
   <h2>Dnevni sažetak</h2>
 
@@ -177,55 +189,48 @@
   </div>
 </section>
 
-  <section id="profile">
-    <h2>Korisnički profil</h2>
-    <label>Dob</label>
-    <input type="number" id="age" />
+<!-- OSTATK SEKCIJA OSTAO ISTI -->
 
-    <label>Spol</label>
-    <select id="gender">
-      <option>Muško</option>
-      <option>Žensko</option>
-    </select>
+<section id="profile">
+  <h2>Korisnički profil</h2>
+  <label>Dob</label>
+  <input type="number" id="age" />
+  <label>Spol</label>
+  <select id="gender">
+    <option>Muško</option>
+    <option>Žensko</option>
+  </select>
+  <label>Visina (cm)</label>
+  <input type="number" id="height" />
+  <label>Težina (kg)</label>
+  <input type="number" id="weight" />
+  <button onclick="saveProfile()">Spremi profil</button>
+</section>
 
-    <label>Visina (cm)</label>
-    <input type="number" id="height" />
+<section id="exercise">
+  <h2>Unos tjelovježbe</h2>
+  <label>Vrsta aktivnosti</label>
+  <input type="text" id="activity" />
+  <label>Trajanje (minute)</label>
+  <input type="number" id="duration" />
+  <label>Potrošene kalorije</label>
+  <input type="number" id="burned" />
+  <button onclick="addExercise()">Dodaj vježbu</button>
+</section>
 
-    <label>Težina (kg)</label>
-    <input type="number" id="weight" />
+<section id="diet">
+  <h2>Unos prehrane</h2>
+  <label>Naziv obroka</label>
+  <input type="text" id="meal" />
+  <label>Kalorije</label>
+  <input type="number" id="mealCalories" />
+  <button onclick="addMeal()">Dodaj obrok</button>
+</section>
 
-    <button onclick="saveProfile()">Spremi profil</button>
-  </section>
-
-  <section id="exercise">
-    <h2>Unos tjelovježbe</h2>
-    <label>Vrsta aktivnosti</label>
-    <input type="text" id="activity" />
-
-    <label>Trajanje (minute)</label>
-    <input type="number" id="duration" />
-
-    <label>Potrošene kalorije</label>
-    <input type="number" id="burned" />
-
-    <button onclick="addExercise()">Dodaj vježbu</button>
-  </section>
-
-  <section id="diet">
-    <h2>Unos prehrane</h2>
-    <label>Naziv obroka</label>
-    <input type="text" id="meal" />
-
-    <label>Kalorije</label>
-    <input type="number" id="mealCalories" />
-
-    <button onclick="addMeal()">Dodaj obrok</button>
-  </section>
-
-  <section id="results">
-    <h2>Rezultati</h2>
-    <p id="resultText">Unesite podatke kako biste vidjeli rezultate.</p>
-  </section>
+<section id="results">
+  <h2>Rezultati</h2>
+  <p id="resultText">Unesite podatke kako biste vidjeli rezultate.</p>
+</section>
 
 </div>
 
